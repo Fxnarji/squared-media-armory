@@ -6,6 +6,7 @@ from .preferences import PF_Preferences
 #Operators
 from .operators.FILE_OT_ImportTextures        import FILE_OT_ImportTextures
 from .operators.FILE_OT_ImportArmor           import FILE_OT_ImportArmor
+from .operators.DUMMY                         import DummyOperator
 
 #panels
 from .panels.VIEW3D_PT_UI_ArmoryMain        import VIEW3D_PT_UI_ArmoryMain
@@ -54,6 +55,7 @@ classes = [
     #operators:
     FILE_OT_ImportTextures,
     FILE_OT_ImportArmor,
+    DummyOperator,
 
     #panels:
     VIEW3D_PT_UI_ArmoryMain
