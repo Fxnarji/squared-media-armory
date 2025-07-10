@@ -2,6 +2,7 @@ import bpy
 from ..constants import AddonProperties
 from ..constants import get_operator
 from .SUB_Logo import draw_logo
+from .SUB_Import import draw_import
          
 class VIEW3D_PT_UI_ArmoryMain(bpy.types.Panel):
     bl_label = "Squared Media Armory"
@@ -13,3 +14,4 @@ class VIEW3D_PT_UI_ArmoryMain(bpy.types.Panel):
     def draw(self, context):
        layout = self.layout
        draw_logo(context=context, layout=layout)
+       draw_import(context=context, layout=layout)

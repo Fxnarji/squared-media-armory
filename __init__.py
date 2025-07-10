@@ -4,7 +4,8 @@ from .resources.LoadIcons import load_icons, unload_icons
 from .preferences import PF_Preferences
 
 #Operators
-from .operators.OBJECT_OT_Sample        import OBJECT_OT_Sample 
+from .operators.FILE_OT_ImportTextures        import FILE_OT_ImportTextures
+from .operators.FILE_OT_ImportArmor           import FILE_OT_ImportArmor
 
 #panels
 from .panels.VIEW3D_PT_UI_ArmoryMain        import VIEW3D_PT_UI_ArmoryMain
@@ -51,7 +52,8 @@ classes = [
     #preferences
     PF_Preferences,
     #operators:
-    OBJECT_OT_Sample,
+    FILE_OT_ImportTextures,
+    FILE_OT_ImportArmor,
 
     #panels:
     VIEW3D_PT_UI_ArmoryMain
@@ -68,10 +70,10 @@ def register():
     
 
 
-def unregister():
+def unregister(): 
+    unload_icons()
     for i  in reversed(classes):
         bpy.utils.unregister_class(i)
-    unload_icons
 
 if __name__ == "__main__":
     register() 
