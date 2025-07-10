@@ -2,6 +2,7 @@
 *.blend1
 *.blend2
 *.blend@
+/lib/textures
 # IDE files
 .vscode/
 .idea/
