@@ -1,13 +1,15 @@
 import bpy
+from .resources.LoadIcons import load_icons, unload_icons
 
-#preferences
-from .preferences import Sample_Preferences
+from .preferences import PF_Preferences
 
 #Operators
 from .operators.OBJECT_OT_Sample        import OBJECT_OT_Sample 
 
 #panels
-from .panels.VIEW3D_PT_UI_Sample        import VIEW3D_PT_UI_Sample
+from .panels.VIEW3D_PT_UI_ArmoryMain        import VIEW3D_PT_UI_ArmoryMain
+
+
 
 #reading values such as name, version and more from toml so there is no need to change information in two places
 def load_manifest_info():
@@ -36,8 +38,8 @@ def load_manifest_info():
 blender_manifest = load_manifest_info()
 bl_info = {
     "name": blender_manifest["name"],
-    "description": "Adds RIG UI for Supported Rigs",
-    "author": "Your Name",
+    "description": "Adds Armor Support for Minecraft Animatios",
+    "author": "Fxnarji",
     "version": blender_manifest["version"], 
     "blender": blender_manifest["blender"],
     "location": "Npanel",
@@ -47,12 +49,12 @@ bl_info = {
 
 classes = [
     #preferences
-    Sample_Preferences,
+    PF_Preferences,
     #operators:
     OBJECT_OT_Sample,
 
     #panels:
-    VIEW3D_PT_UI_Sample
+    VIEW3D_PT_UI_ArmoryMain
 
     ]
 
@@ -61,7 +63,7 @@ classes = [
 def register():
     for i in classes:
         bpy.utils.register_class(i)
-
+    load_icons()
 
     
 
@@ -69,7 +71,7 @@ def register():
 def unregister():
     for i  in reversed(classes):
         bpy.utils.unregister_class(i)
-
+    unload_icons
 
 if __name__ == "__main__":
     register() 
