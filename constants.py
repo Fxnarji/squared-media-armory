@@ -6,6 +6,7 @@ import bpy
 #has to be all lowercase
 bl_id_prefix = "sqm_armory" 
 
+
 class AddonProperties:
     module_name = __package__
     panel_category = "SQM Armory"
@@ -51,5 +52,8 @@ class ArmorProperties:
 
     ]
     types = ["boots", "chestplate", "helmet", "leggings"]
+
+    progress = 0
+
 
  

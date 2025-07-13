@@ -35,11 +35,11 @@ class FILE_OT_ImportTextures(bpy.types.Operator):
                     else:
                         output_dir = os.path.join(addon_root, "lib", target_dir)
                     os.makedirs(output_dir, exist_ok=True)
-                    print(f"{output_dir} should be valid now")
                     output_file = os.path.join(output_dir, filename)
 
                     with jar.open(file) as source, open(output_file, 'wb') as target:
                         target.write(source.read())
+                        ArmorProperties.progress += 1
 
 
     def import_textures_and_trims(self):

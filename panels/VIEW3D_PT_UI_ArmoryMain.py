@@ -13,12 +13,11 @@ class VIEW3D_PT_UI_ArmoryMain(bpy.types.Panel):
 
 
     def draw(self, context):
-       layout = self.layout
-       draw_logo(context=context, layout=layout)
-       #draw_import(context=context, layout=layout)
-       draw_armor_piece(context=context, layout=layout, piece="Helmet")
-       draw_armor_piece(context=context, layout=layout, piece="Chestplate")
-       draw_armor_piece(context=context, layout=layout, piece="Leggings")
-       draw_armor_piece(context=context, layout=layout, piece="Boots")
-
+        layout = self.layout
+        draw_logo(context=context, layout=layout)
+        #draw_import(context=context, layout=layout)
+        draw_armor_piece(context=context, layout=layout, piece="Helmet")
+        draw_armor_piece(context=context, layout=layout, piece="Chestplate")
+        draw_armor_piece(context=context, layout=layout, piece="Leggings")
+        draw_armor_piece(context=context, layout=layout, piece="Boots")
        
