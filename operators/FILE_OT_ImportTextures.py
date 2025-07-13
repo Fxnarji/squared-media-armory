@@ -3,7 +3,7 @@ import zipfile
 import os
 
 from ..constants import get_operator, get_addon_root_folder
-from ..constants import ArmorProperties
+from ..constants import ArmorProperties, AddonProperties
 
 class FILE_OT_ImportTextures(bpy.types.Operator):
     bl_idname = get_operator("import_textures")
@@ -76,5 +76,12 @@ class FILE_OT_ImportTextures(bpy.types.Operator):
     def execute(self, context):
         self.import_textures_and_trims()
         self.import_icons()
+
+        #optional
+        bpy.ops.preferences.addon_disable(module=AddonProperties.module_name)
+        print(AddonProperties.module_name)
+        bpy.ops.preferences.addon_enable(module=AddonProperties.module_name)
+
+
         print("Happy")
         return {'FINISHED'}

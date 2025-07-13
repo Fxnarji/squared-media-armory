@@ -1,6 +1,6 @@
 import bpy
 import os
-from ..constants import ArmorProperties
+from ..constants import ArmorProperties, AddonProperties
 from ..constants import get_operator, get_addon_root_folder
 from ..resources.utils import get_rig
 
@@ -55,19 +55,10 @@ class SHADER_OT_SetTextures(bpy.types.Operator):
         except:
             print("no modifier found!")
 
-
-
-
-
-
     def import_image_to_file(self,path):
         image_name = self.get_image_name()
-
-        if image_name in bpy.data.images:
-            image = bpy.data.images[image_name]
-        else:
-            image = bpy.data.images.load(path)
-            image.name = image_name
+        image = bpy.data.images.load(path)
+        image.name = image_name
 
         return image
 
@@ -78,5 +69,7 @@ class SHADER_OT_SetTextures(bpy.types.Operator):
 
         self.set_texture_in_shader(Mat_Obj, image)
         self.set_texture_in_GN(image, rig)
+
+
         return {"FINISHED"}
 
