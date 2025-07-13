@@ -24,7 +24,8 @@ def get_preferences():
     return addon_prefs
 
 def get_operator(name):
-    return bl_id_prefix + "." + name
+    return_string = f"{bl_id_prefix}.{name}"
+    return return_string
 
 def get_addon_root_folder():
     return os.path.dirname(__file__)
