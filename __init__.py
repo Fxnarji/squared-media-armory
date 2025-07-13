@@ -4,13 +4,13 @@ from .resources.LoadIcons import load_icons, unload_icons
 from .preferences import PF_Preferences
 
 #Operators
-from .operators.FILE_OT_ImportTextures        import FILE_OT_ImportTextures
-from .operators.FILE_OT_ImportArmor           import FILE_OT_ImportArmor
-from .operators.DUMMY                         import DummyOperator
+from .operators.FILE_OT_ImportTextures      import FILE_OT_ImportTextures
+from .operators.FILE_OT_ImportArmor         import FILE_OT_ImportArmor
+from .operators.DUMMY                       import DummyOperator
+from .operators.SHADER_OT_SetTextures       import SHADER_OT_SetTextures
 
 #panels
 from .panels.VIEW3D_PT_UI_ArmoryMain        import VIEW3D_PT_UI_ArmoryMain
-
 
 
 #reading values such as name, version and more from toml so there is no need to change information in two places
@@ -55,6 +55,7 @@ classes = [
     #operators:
     FILE_OT_ImportTextures,
     FILE_OT_ImportArmor,
+    SHADER_OT_SetTextures,
     DummyOperator,
 
     #panels:
@@ -65,17 +66,18 @@ classes = [
 
 
 def register():
-    for i in classes:
-        bpy.utils.register_class(i)
+    for cls in classes:
+        bpy.utils.register_class(cls)
     load_icons()
+
 
     
 
 
 def unregister(): 
     unload_icons()
-    for i  in reversed(classes):
-        bpy.utils.unregister_class(i)
+    for cls in reversed(classes):
+        bpy.utils.unregister_class(cls)
 
 if __name__ == "__main__":
-    register() 
+    register()

@@ -8,7 +8,8 @@ preview_collections = {}
 def load_icons():
     icons_dir = os.path.join(get_addon_root_folder(), "lib", "icons")
     pcoll = bpy.utils.previews.new()
-    pcoll.load("sqm_logo", os.path.join(icons_dir, "SQM_Tiny.png"), 'IMAGE')
+    for filename in os.listdir(icons_dir):
+        pcoll.load(filename, os.path.join(icons_dir, filename), 'IMAGE')
 
     preview_collections["main"] = pcoll
 

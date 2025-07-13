@@ -4,7 +4,7 @@ def draw_logo(context, layout):
     box = layout.box()
     pcoll = preview_collections.get("main")
     if pcoll:
-        icon_id = pcoll["sqm_logo"].icon_id
+        icon_id = pcoll["SQM_Tiny.png"].icon_id
         box.label(text="Squared Media Armory", icon_value=icon_id)
 
     else:

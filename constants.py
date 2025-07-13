@@ -28,3 +28,27 @@ def get_operator(name):
 
 def get_addon_root_folder():
     return os.path.dirname(__file__)
+
+
+class ArmorProperties:
+    colors = [
+        #"leather", 
+        #"chainmail",
+        "iron", 
+        "golden", 
+        "diamond", 
+        "netherite", 
+        ]
+    colors_enum = [
+        #("LEATHER","leather",""),
+        #("CHAINMAIL","chainmail",""),
+        ("IRON","iron",""),
+        ("GOLDEN","golden",""),
+        ("DIAMOND","diamond",""),
+        ("NETHERITE","netherite",""),
+
+
+    ]
+    types = ["boots", "chestplate", "helmet", "leggings"]
+
+ 

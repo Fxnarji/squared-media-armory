@@ -62,3 +62,12 @@ def check_for_textures(self = None):
     if missing == 0:
         return True
     return False
+
+def get_rig(context):
+    return bpy.context.active_object
+
+def get_ui_properties(property_name, context):
+    property_bone = "WGT_uiProperties"
+    rig = get_rig(context)
+    pose_bone = rig.pose.bones.get(property_bone)
+    return pose_bone
