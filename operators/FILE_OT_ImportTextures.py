@@ -74,7 +74,7 @@ class FILE_OT_ImportTextures(bpy.types.Operator):
         return {'RUNNING_MODAL'}
 
     def execute(self, context):
-        #self.import_textures_and_trims()
+        self.import_textures_and_trims()
         self.import_icons()
         print("Happy")
         return {'FINISHED'}
